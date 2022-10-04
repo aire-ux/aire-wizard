@@ -1,0 +1,19 @@
+
+plugins {
+    id 'java'
+    id 'io.freefair.lombok'
+    id 'io.spring.dependency-management'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+
+dependencyManagement {
+    imports {
+        mavenBom "io.sunshower.aire:bom-imported:$version"
+    }
+}
+
