@@ -1,4 +1,3 @@
-
 plugins {
     id 'java'
     id 'io.freefair.lombok'
@@ -14,10 +13,18 @@ repositories {
 dependencyManagement {
     imports {
         mavenBom "io.sunshower.aire:bom-imported:$version"
+        mavenBom "io.sunshower.aire:bom-exported:$version"
     }
 }
 
 
 dependencies {
-    implementation 'com.vaadin:flow-server'
+    [
+            'com.vaadin:flow-server',
+            'com.vaadin:vaadin-icons-flow',
+            'io.sunshower.aire:aire-common',
+            'com.vaadin:flow-html-components'
+    ].each {
+        implementation it
+    }
 }
