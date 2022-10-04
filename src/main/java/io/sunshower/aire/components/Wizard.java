@@ -19,6 +19,8 @@ import com.vaadin.flow.component.icon.IconFactory;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.server.Command;
 import com.vaadin.flow.shared.Registration;
+import io.sunshower.aire.components.common.DynamicInstantiator;
+import io.sunshower.arcus.reflect.Reflect;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -28,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import lombok.NonNull;
 import lombok.val;
-import io.sunshower.aire.components.common.DynamicInstantiator;
 
 /**
  * A wizard is a structured information flow. The wizard has a <i>Key</i> type, which is how

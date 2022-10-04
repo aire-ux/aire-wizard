@@ -23,7 +23,9 @@ dependencies {
             'com.vaadin:flow-server',
             'com.vaadin:vaadin-icons-flow',
             'io.sunshower.aire:aire-common',
-            'com.vaadin:flow-html-components'
+            'com.vaadin:flow-html-components',
+            'io.sunshower.arcus:arcus-lang',
+            'io.sunshower.arcus:arcus-reflect'
     ].each {
         implementation it
     }
