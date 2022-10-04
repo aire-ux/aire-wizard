@@ -17,3 +17,7 @@ dependencyManagement {
     }
 }
 
+
+dependencies {
+    implementation 'com.vaadin:flow-server'
+}
