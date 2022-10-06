@@ -4,8 +4,8 @@
   "description": "Wizard Component for Aire/Vaadin",
   "main": "dist/es2019/wizard.js",
   "exports": {
-    "wizard": "./dist/es2019/wizard.js",
-    "wizard-page": "./dist/es2019/wizard-page.js"
+    "./wizard": "./dist/es2019/wizard.js",
+    "./wizard-page": "./dist/es2019/wizard-page.js"
   },
   "scripts": {
     "test": "npx test",
@@ -55,6 +55,7 @@
     "workbox-precaching": "6.5.0"
   },
   "dependencies": {
+    "@aire-ux/aire-wizard": "1.0.0",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",
@@ -162,6 +163,7 @@
   },
   "vaadin": {
     "dependencies": {
+      "@aire-ux/aire-wizard": "1.0.0",
       "@polymer/iron-icon": "3.0.1",
       "@polymer/iron-iconset-svg": "3.0.1",
       "@polymer/iron-list": "3.1.0",
@@ -281,7 +283,7 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "01b94803f66ccfde79487d1c6653fd674c1531faae7c79a080f608cf0cd9e7c9"
+    "hash": "fe9e953fcc0c2303c2b3f7096c592880d86984a762a95c8bca51622090718d0f"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -386,6 +388,7 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "date-fns": "$date-fns"
+    "date-fns": "$date-fns",
+    "@aire-ux/aire-wizard": "$@aire-ux/aire-wizard"
   }
 }

@@ -1,2 +1,7 @@
 # aire-wizard
-Wizard Component for Aire-UX/Vaadin Flow
+
+Aire-wizard is a full-featured wizard component for Vaadin flow
+
+
+## Usage
+tk

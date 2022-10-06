@@ -45,9 +45,9 @@ import lombok.val;
 //@CssImport("./styles/aire/ui/components/wizard.css")
 //@JsModule()
 //@NpmPackage(name = "aire-ux")
-@NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
+@JsModule("@aire-ux/aire-wizard/wizard")
+@NpmPackage(value = "@aire-ux/aire-wizard", version = "1.0.0")
 public class Wizard<K, V> extends HtmlContainer {
-
   public static final String COMPLETE = "complete";
   public static final String NOT_COMPLETE = "not-complete";
   public static final String LEAVING = "leaving";

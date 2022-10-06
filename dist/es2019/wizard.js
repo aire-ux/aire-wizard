@@ -28,9 +28,6 @@ Wizard.styles = css `
       width: 100%;
       height: 100%;
     }
-    
-    
-  
   `;
 Wizard = __decorate([
     customElement('aire-wizard')
