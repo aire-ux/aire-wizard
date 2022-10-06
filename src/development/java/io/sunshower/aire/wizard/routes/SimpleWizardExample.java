@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 public class SimpleWizardExample extends VerticalLayout {
 
   public SimpleWizardExample() {
-    add(new Button("Hello"));
+
+
   }
 }

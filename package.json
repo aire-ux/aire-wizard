@@ -55,7 +55,7 @@
     "workbox-precaching": "6.5.0"
   },
   "dependencies": {
-    "@aire-ux/aire-wizard": "1.0.0-SNAPSHOT",
+    "@aire-ux/aire-wizard": "file:",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",
@@ -283,7 +283,7 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "04f7c8d292085aedbc40c11d464e2e93b7a373a171c33cfc22393ebfdfc54bbf"
+    "hash": "aa29c180841bd40614433603c734dfcbe006b676c88e055b139a3bcd365ae5d6"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
