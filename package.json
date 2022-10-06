@@ -8,7 +8,8 @@
     "wizard-page": "./dist/es2019/wizard-page.js"
   },
   "scripts": {
-    "test": "npx test"
+    "test": "npx test",
+    "build": "npx gulp build"
   },
   "repository": {
     "type": "git",

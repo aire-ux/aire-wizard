@@ -16,9 +16,8 @@ import {
 } from 'gulp-typescript'
 
 
-
-const gulpSass = require('gulp-sass');
-const sass = gulpSass(require('node-sass'));
+const gulpSass = require('gulp-sass'),
+    sass = gulpSass(require('node-sass'));
 
 /**
  * declarations
@@ -38,7 +37,7 @@ const project =
 task('build:typescript', () => {
   return src('./src/main/typescript/**/*.ts')
       .pipe(project())
-      .pipe(dest('./dist/es2019'))
+      .pipe(dest('./dist/es2019'));
 });
 
 
