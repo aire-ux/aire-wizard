@@ -46,7 +46,7 @@ import lombok.val;
 //@JsModule()
 //@NpmPackage(name = "aire-ux")
 @JsModule("@aire-ux/aire-wizard/wizard")
-@NpmPackage(value = "@aire-ux/aire-wizard", version = "1.0.0")
+@NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
 public class Wizard<K, V> extends HtmlContainer {
   public static final String COMPLETE = "complete";
   public static final String NOT_COMPLETE = "not-complete";
