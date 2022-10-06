@@ -79,7 +79,6 @@ jobs:
 
 
       - name: Configure Node
-        runs-on: ubuntu-latest
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
