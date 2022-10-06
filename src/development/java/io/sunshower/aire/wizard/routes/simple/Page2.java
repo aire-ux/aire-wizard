@@ -3,14 +3,12 @@ package io.sunshower.aire.wizard.routes.simple;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.IconFactory;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import io.sunshower.aire.components.AbstractWizardPage;
 import io.sunshower.aire.components.WizardPage;
 import io.sunshower.aire.wizard.routes.simple.Page2.TIconProvider;
 
 @WizardPage(key = "page-2", title = "world", iconFactory = TIconProvider.class)
 public class Page2 extends AbstractWizardPage<String, Object> {
-
 
   public static class TIconProvider implements IconFactory {
 
@@ -19,5 +17,4 @@ public class Page2 extends AbstractWizardPage<String, Object> {
       return VaadinIcon.BUG.create();
     }
   }
-
 }

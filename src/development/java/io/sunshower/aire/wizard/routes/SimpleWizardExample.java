@@ -6,7 +6,6 @@ import com.vaadin.flow.spring.annotation.RouteScope;
 import io.sunshower.aire.components.Wizard;
 import io.sunshower.aire.wizard.routes.simple.Page1;
 import io.sunshower.aire.wizard.routes.simple.Page2;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component

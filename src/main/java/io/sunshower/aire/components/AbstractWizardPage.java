@@ -15,6 +15,7 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.function.SerializableTriConsumer;
 import com.vaadin.flow.shared.Registration;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.sunshower.aire.components.common.Key;
 import java.lang.reflect.ParameterizedType;
 import java.util.Arrays;
@@ -26,7 +27,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.val;
-import java.util.HashMap;
 
 /** base-class for commonly-themed wizard-pages */
 @Tag("aire-wizard-page")
@@ -34,6 +34,7 @@ import java.util.HashMap;
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
 @JsModule("@aire-ux/aire-wizard/wizard-page")
 @NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
+@SuppressFBWarnings
 public class AbstractWizardPage<K, T> extends Component
     implements HasComponents, WizardModelSupport<K, T>, AutoCloseable {
 

@@ -21,6 +21,7 @@ import com.vaadin.flow.component.icon.IconFactory;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.server.Command;
 import com.vaadin.flow.shared.Registration;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.sunshower.aire.components.common.DynamicInstantiator;
 import io.sunshower.arcus.reflect.Reflect;
 import java.util.ArrayDeque;
@@ -42,6 +43,7 @@ import lombok.val;
  */
 @Tag("aire-wizard")
 @SuppressWarnings("PMD")
+@SuppressFBWarnings
 @JsModule("@aire-ux/aire-wizard/wizard")
 @CssImport("@aire-ux/aire-wizard/styles/wizard.css")
 @NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)

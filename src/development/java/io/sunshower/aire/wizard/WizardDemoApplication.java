@@ -16,6 +16,4 @@ public class WizardDemoApplication extends VerticalLayout implements AppShellCon
   public static void main(String[] args) {
     SpringApplication.run(WizardDemoApplication.class, args);
   }
-
-
 }
