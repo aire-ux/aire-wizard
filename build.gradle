@@ -49,6 +49,8 @@ dependencies {
     [
             'com.vaadin:flow-server',
             'com.vaadin:vaadin-icons-flow',
+            'com.vaadin:vaadin-button-flow',
+            'com.vaadin:vaadin-ordered-layout-flow',
             'io.sunshower.aire:aire-common',
             'com.vaadin:flow-html-components',
             'io.sunshower.arcus:arcus-lang',
