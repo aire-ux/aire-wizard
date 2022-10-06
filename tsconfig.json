@@ -11,6 +11,9 @@
     "target": "es2019",
     "moduleResolution": "node",
     "strict": true,
+    "rootDir": "./src/",
+    "outDir": "./dist",
+
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
@@ -29,5 +32,7 @@
   "include": [
     "src/main/typescript/**/*.ts",
   ],
-  "exclude": []
+  "exclude": [
+    "./node_modules"
+  ]
 }
