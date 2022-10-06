@@ -18,9 +18,6 @@ export class Wizard extends LitElement {
       width: 100%;
       height: 100%;
     }
-    
-    
-  
   `;
 
   render(): HTMLTemplateResult {

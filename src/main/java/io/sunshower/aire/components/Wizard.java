@@ -11,6 +11,7 @@ import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.html.ListItem;
 import com.vaadin.flow.component.html.Nav;
 import com.vaadin.flow.component.html.Span;
@@ -40,8 +41,11 @@ import lombok.val;
  */
 @Tag("aire-wizard")
 @SuppressWarnings("PMD")
-@JsModule("./aire/ui/components/wizard.ts")
-@CssImport("./styles/aire/ui/components/wizard.css")
+//@JsModule("./aire/ui/components/wizard.ts")
+//@CssImport("./styles/aire/ui/components/wizard.css")
+//@JsModule()
+//@NpmPackage(name = "aire-ux")
+@NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
 public class Wizard<K, V> extends HtmlContainer {
 
   public static final String COMPLETE = "complete";
