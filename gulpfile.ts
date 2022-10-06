@@ -48,7 +48,7 @@ task('build:typescript', () => {
 task('build:scss', () => {
   return src('./src/main/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(dest('./dist/styles'));
+      .pipe(dest('./styles'));
 });
 
 

@@ -5,7 +5,9 @@
   "main": "dist/es2019/wizard.js",
   "exports": {
     "./wizard": "./dist/es2019/wizard.js",
-    "./wizard-page": "./dist/es2019/wizard-page.js"
+    "./styles/wizard.css": "./dist/styles/wizard.css",
+    "./wizard-page": "./dist/es2019/wizard-page.js",
+    "./styles/wizard-page.css": "./dist/styles/wizard-page.css"
   },
   "scripts": {
     "test": "npx test",
