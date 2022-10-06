@@ -20,7 +20,10 @@ The Aire Wizard supports:
 7. model-passing
 8. steps-per-icon
 
+
 ### Simple Usage
+
+
 
 ```java
 
