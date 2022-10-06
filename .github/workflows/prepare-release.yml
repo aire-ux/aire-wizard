@@ -248,6 +248,9 @@ jobs:
             -PmavenRepositoryUrl=${{secrets.MAVEN_REPOSITORY_URL}} --stacktrace
 
 
+      - name: Commit Changes
+        run: |
+          git commit -am "Releasing new Snapshot [tag: snapshot]"
 
 
       - name: Push changes
