@@ -5,6 +5,7 @@ import static java.lang.String.format;
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.DetachEvent;
 import com.vaadin.flow.component.HtmlContainer;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.Text;
@@ -91,6 +92,11 @@ public class Wizard<K, V> extends HtmlContainer {
     steps.put(
         step.getKey(),
         new WizardStep<>(step.getKey(), step.getTitle(), step.getPage(), step.getIconFactory()));
+  }
+
+  @Override
+  protected void onDetach(DetachEvent detachEvent) {
+    removeAll();
   }
 
   public boolean canRetreat() {

@@ -2,12 +2,15 @@ package io.sunshower.aire.wizard.routes;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.spring.annotation.RouteScope;
 import io.sunshower.aire.components.Wizard;
 import io.sunshower.aire.wizard.routes.simple.Page1;
 import io.sunshower.aire.wizard.routes.simple.Page2;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@RouteScope
 @Route("wizard/simple")
 public class SimpleWizardExample extends VerticalLayout {
 
