@@ -35,23 +35,6 @@ sourceSets {
 }
 
 
-task populateVersions(type: Copy) {
-    from "${project.projectDir}/src/main/resources/templates/Versions.java"
-    into "${buildDir}/generated/sources/main/java/io/sunshower/aire/components"
-
-    def properties = new Properties()
-    file("gradle.properties").withInputStream {
-        properties.load(it)
-    }
-    def devMode = findProperty('development') != null
-    if (devMode) {
-        properties.replaceAll((k, v) -> {
-            def sv = String.valueOf(v)
-            return sv.contains("-SNAPSHOT") ? sv.replaceAll("-SNAPSHOT", "") : sv
-        })
-    }
-    filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: properties)
-}
 
 build.dependsOn populateVersions
 build.mustRunAfter populateVersions
