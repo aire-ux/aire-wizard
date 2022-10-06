@@ -31,6 +31,8 @@
   "homepage": "https://github.com/aire-ux/aire-wizard#readme",
   "devDependencies": {
     "@types/gulp": "^4.0.9",
+    "@types/gulp-sass": "^5.0.0",
+    "@types/node-sass": "^4.11.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",

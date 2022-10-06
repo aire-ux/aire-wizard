@@ -4,7 +4,8 @@
 import {
   src,
   task,
-  dest
+  dest,
+  parallel
 } from 'gulp';
 
 /**
@@ -14,6 +15,10 @@ import {
   createProject
 } from 'gulp-typescript'
 
+
+
+const gulpSass = require('gulp-sass');
+const sass = gulpSass(require('node-sass'));
 
 /**
  * declarations
@@ -36,10 +41,23 @@ task('build:typescript', () => {
       .pipe(dest('./dist/es2019'))
 });
 
+
 /**
- * compile
+ * compile scss into dist/styles
  */
 
 task('build:scss', () => {
-
+  return src('./src/main/scss/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(dest('./dist/styles'));
 });
+
+
+/**
+ * build entire project into dist
+ */
+task('build',
+    parallel(
+        'build:typescript',
+        'build:scss'
+    ));
