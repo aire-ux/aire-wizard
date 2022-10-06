@@ -21,6 +21,7 @@ jobs:
       CURRENT_MAJOR_VERSION: 1
       CURRENT_MINOR_VERSION: 0
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     #################   Overview of Build Process   #################
     #   Note:  this is documented fully at
@@ -76,6 +77,27 @@ jobs:
           echo ::set-env name=final_version::$CURRENT_MAJOR_VERSION.$CURRENT_MINOR_VERSION.$BUILD_NUMBER
           echo ::set-output name=result::$CURRENT_MAJOR_VERSION.$CURRENT_MINOR_VERSION.$BUILD_NUMBER.Final
 
+
+      - name: Configure Node
+        runs-on: ubuntu-latest
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Build Lit Component
+        run: npm run build
+
+      - name: Increment Lit Version
+        run: npm version patch
+
+      - name: Publish NPM Components
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Update NPM Version for build
+        run: npmv=$(node -p "require('./package.json').version") && sed "/^npmVersion/s/=.*$/=$npmv/" gradle.properties -i
 
 
 
