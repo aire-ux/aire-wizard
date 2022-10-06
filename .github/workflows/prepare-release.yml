@@ -89,7 +89,6 @@ jobs:
           git config --local user.email "build@sunshower.io"
           git config --local user.name "build"
           git remote set-url origin https://x-access-token:${{ secrets.PUSH_ENABLED_GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Releasing new Snapshot [tag: snapshot]"
 
       #################   Patch Version Number #################
       #
