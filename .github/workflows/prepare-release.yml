@@ -84,14 +84,19 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
+      #################   Patch Version Number #################
+      #
+      #  We need to run this before we run anything else
+      #################   Patch Version Number #################
+      - name: Increment NPM Version
+        run: npm version patch
+
       - name: Install NPM dependencies
         run: npm install
 
       - name: Build Lit Component
         run: npm run build
 
-      - name: Increment Lit Version
-        run: npm version patch
 
       - name: Publish NPM Components
         run: npm publish --access=public
