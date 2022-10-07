@@ -51,7 +51,9 @@ public class Page2 extends AbstractWizardPage<String, Object> {
 }
 
 ```
-Result:
+
+
+### Example
 
 ![Simple, empty wizard](documentation/assets/images/img.png)
 
