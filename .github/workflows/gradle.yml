@@ -79,7 +79,7 @@ jobs:
         with:
           gradle-version: 7.4
           arguments: >-
-            assemble build sA -i
+            assemble pV build sA -i
             -PmavenRepositoryUsername=${{secrets.MAVEN_REPOSITORY_USERNAME}}
             -PmavenRepositoryPassword=${{secrets.MAVEN_REPOSITORY_PASSWORD}}
             -PmavenRepositoryUrl=${{secrets.MAVEN_REPOSITORY_URL}} --stacktrace
@@ -100,7 +100,7 @@ jobs:
         with:
           gradle-version: 7.4
           arguments: >-
-            assemble build sA
+            assemble pV build sA
             -i
             -Psigning.gnupg.keyName=${{ secrets.SIGNING_KEY_ID }}
             -Psigning.gnupg.passphrase=${{ secrets.SIGNING_PASSWORD }}
