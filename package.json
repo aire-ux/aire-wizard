@@ -4,13 +4,15 @@
   "description": "Wizard Component for Aire/Vaadin",
   "main": "dist/es2019/wizard.js",
   "exports": {
+    ".": "dist/es2019/index.js",
     "./wizard": "./dist/es2019/wizard.js",
     "./styles/wizard.css": "./dist/styles/wizard.css",
     "./wizard-page": "./dist/es2019/wizard-page.js",
     "./styles/wizard-page.css": "./dist/styles/wizard-page.css"
   },
   "scripts": {
-    "test": "npx test",
+    "test": "npx vitest --config vitest.config.ts run",
+    "develop": "npx vitest --config vitest.config.ts watch",
     "build": "npx gulp build"
   },
   "repository": {
@@ -33,16 +35,21 @@
   },
   "homepage": "https://github.com/aire-ux/aire-wizard#readme",
   "devDependencies": {
+    "@happy-dom/global-registrator": "^7.4.0",
+    "@open-wc/semantic-dom-diff": "^0.19.7",
+    "@open-wc/testing": "^3.1.6",
     "@rollup/plugin-replace": "3.1.0",
     "@rollup/pluginutils": "4.1.0",
     "@types/gulp": "^4.0.9",
     "@types/gulp-sass": "^5.0.0",
     "@types/node-sass": "^4.11.3",
+    "@vitest/ui": "^0.24.0",
     "async": "3.2.2",
     "glob": "7.2.3",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-sass": "^5.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-typescript": "^2.12.2",
+    "happy-dom": "^7.4.0",
     "lit": "^2.4.0",
     "mkdirp": "1.0.4",
     "node-sass": "^7.0.3",
@@ -52,12 +59,13 @@
     "typescript": "^4.8.4",
     "vite": "v3.1.0",
     "vite-plugin-checker": "0.4.9",
+    "vite-tsconfig-paths": "^3.5.1",
+    "vitest": "^0.24.0",
     "workbox-build": "6.5.0",
     "workbox-core": "6.5.0",
     "workbox-precaching": "6.5.0"
   },
   "dependencies": {
-    "@aire-ux/aire-wizard": "file:",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",
