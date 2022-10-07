@@ -48,8 +48,8 @@ sourceSets {
 
 
 
-build.dependsOn populateVersions
-build.mustRunAfter populateVersions
+compileJava.dependsOn populateVersions
+compileJava.mustRunAfter populateVersions
 
 configurations {
     developmentImplementation {
