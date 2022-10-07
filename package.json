@@ -1,6 +1,6 @@
 {
   "name": "@aire-ux/aire-wizard",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wizard Component for Aire/Vaadin",
   "main": "dist/es2019/wizard.js",
   "exports": {
