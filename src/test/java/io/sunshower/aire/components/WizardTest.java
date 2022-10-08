@@ -12,7 +12,6 @@ import com.aire.ux.test.Select;
 import com.aire.ux.test.TestContext;
 import com.aire.ux.test.ViewTest;
 import com.aire.ux.test.spring.EnableSpring;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import io.sunshower.aire.wizard.WizardDemoApplication;
 import io.sunshower.aire.wizard.routes.SimpleWizardExample;
