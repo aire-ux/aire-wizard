@@ -4,4 +4,9 @@ import io.sunshower.aire.components.AbstractWizardPage;
 import io.sunshower.aire.components.WizardPage;
 
 @WizardPage(key = "page-1", title = "hello")
-public class Page1 extends AbstractWizardPage<String, Object> {}
+public class Page1 extends AbstractWizardPage<String, Object> {
+
+  public Page1() {
+    getElement().getClassList().add("page-1");
+  }
+}

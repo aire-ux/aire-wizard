@@ -82,6 +82,7 @@ dependencies {
     developmentImplementation 'com.vaadin:vaadin-spring-boot-starter'
 
     [
+            'javax.websocket:javax.websocket-api:1.1',
             'io.sunshower.aire-test:aire-test-vaadin',
             'io.sunshower.aire-test:aire-test-spring',
             'org.springframework.boot:spring-boot-test',
