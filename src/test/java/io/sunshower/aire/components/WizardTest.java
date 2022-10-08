@@ -30,15 +30,11 @@ class WizardTest {
     assertNotNull(ex);
   }
 
-
   @ViewTest
   @Navigate("wizard/simple")
   void ensureNavigatingToNextPageWorks(@Context TestContext $) {
 
-    val button = $.selectFirst(
-        "footer > vaadin-button[key=next]",
-        Button.class).get();
-
+    val button = $.selectFirst("footer > vaadin-button[key=next]", Button.class).get();
 
     assertNotNull(button);
     button.click();

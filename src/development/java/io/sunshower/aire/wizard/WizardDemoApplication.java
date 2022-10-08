@@ -12,9 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @PWA(name = "Aire Wizard Demo", shortName = "Wizard Demo")
 @ComponentScan(basePackageClasses = SimpleWizardExample.class)
-@EnableVaadin({
-    "io.sunshower.aire.wizard.routes"
-})
+@EnableVaadin({"io.sunshower.aire.wizard.routes"})
 public class WizardDemoApplication extends VerticalLayout implements AppShellConfigurator {
 
   public static void main(String[] args) {
