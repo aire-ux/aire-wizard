@@ -30,6 +30,16 @@ dependencyManagement {
     }
 }
 
+configurations {
+    developmentImplementation {
+        extendsFrom implementation
+    }
+
+
+    endToEnd{
+        extendsFrom implementation
+    }
+}
 
 
 sourceSets {
@@ -66,6 +76,9 @@ sourceSets {
             compileClasspath += test.compileClasspath
             runtimeClasspath += test.runtimeClasspath
 
+            compileClasspath += configurations.endToEnd
+
+
         }
     }
 }
@@ -74,31 +87,15 @@ sourceSets {
 compileJava.dependsOn populateVersions
 compileJava.mustRunAfter populateVersions
 
-task endToEndTest(type: Test) {
-
-    /**
-     *
-     */
-    group = "verification"
 
 
-    description = "Run End-To-End Tests"
-
-    classpath = sourceSets.e2e.runtimeClasspath
-    testClassesDirs = sourceSets.e2e.output.classesDirs
-
-}
-
-configurations {
-    developmentImplementation {
-        extendsFrom implementation
-    }
-    endToEnd {
-        extendsFrom testImplementation
-    }
-}
 
 dependencies {
+
+    /**
+     * test implementation dependencies
+     */
+
     [
             'com.vaadin:flow-server',
             'com.vaadin:vaadin-icons-flow',
@@ -114,9 +111,9 @@ dependencies {
     }
 
 
-
-    developmentImplementation 'com.vaadin:vaadin-spring-boot-starter'
-
+    /**
+     * test implementation dependencies
+     */
     [
             'javax.websocket:javax.websocket-api:1.1',
             'io.sunshower.aire-test:aire-test-vaadin',
@@ -127,10 +124,43 @@ dependencies {
         testImplementation it
     }
 
-    endToEnd "org.testcontainers:selenium"
 
+    /**
+     * e2e dependencies
+     */
+    endToEnd "org.testcontainers:selenium"
+    endToEnd "org.testcontainers:junit-jupiter"
+
+
+//    testImplementation "org.testcontainers:selenium"
+//    testImplementation "org.testcontainers:junit-jupiter"
+//    endToEnd "org.testcontainers:selenium"
+//    endToEnd "org.testcontainers:junit-jupiter"
+
+    /**
+     * development dependencies
+     */
+    developmentImplementation 'com.vaadin:vaadin-spring-boot-starter'
 
 }
+
+tasks.register('endToEndTest', Test) {
+
+    /**
+     *
+     */
+    group = "verification"
+
+
+    description = "Run End-To-End Tests"
+    classpath = sourceSets.e2e.runtimeClasspath
+    testClassesDirs = sourceSets.e2e.output.classesDirs
+
+    shouldRunAfter test
+
+}
+
+check.dependsOn endToEndTest
 
 spotbugsTest {
     enabled = false
