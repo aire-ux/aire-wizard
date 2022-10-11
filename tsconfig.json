@@ -27,8 +27,6 @@
     "baseUrl": ".",
     "paths": {
       "@aire-ux/aire-wizard/*": ["./src/main/typescript/*"]
-
-//      "wizard": ["./src/main/typescript/wizard.ts"]
     },
     "types": ["vitest/globals"]
   },

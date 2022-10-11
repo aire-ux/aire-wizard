@@ -11,6 +11,7 @@
     "./styles/wizard-page.css": "./dist/styles/wizard-page.css"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "npx vitest --config vitest.config.ts run",
     "develop": "npx vitest --config vitest.config.ts watch",
     "build": "npx gulp build"
@@ -49,9 +50,9 @@
     "@vitest/ui": "^0.24.0",
     "async": "3.2.2",
     "glob": "7.2.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-sass": "^5.1.0",
-    "gulp-typescript": "^2.14.1",
+    "gulp-typescript": "^5.0.1",
     "happy-dom": "^7.4.0",
     "lit": "^2.4.0",
     "mkdirp": "1.0.4",
