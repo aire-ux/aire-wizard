@@ -30,6 +30,17 @@ dependencyManagement {
     }
 }
 
+configurations {
+    developmentImplementation {
+        extendsFrom implementation
+    }
+
+
+    endToEnd {
+        extendsFrom implementation
+    }
+}
+
 
 sourceSets {
     main {
@@ -44,20 +55,46 @@ sourceSets {
         }
     }
 
-}
 
+    test {
+        java {
+            compileClasspath += development.output
+            runtimeClasspath += development.output
+        }
+    }
+
+    e2e {
+        java {
+            srcDir "src/e2e/java"
+
+            compileClasspath += main.output
+            runtimeClasspath += main.output
+
+            compileClasspath += development.output
+            runtimeClasspath += development.output
+
+            compileClasspath += test.compileClasspath
+            runtimeClasspath += test.runtimeClasspath
+
+            compileClasspath += configurations.endToEnd
+            runtimeClasspath += configurations.endToEnd
+
+
+        }
+    }
+}
 
 
 compileJava.dependsOn populateVersions
 compileJava.mustRunAfter populateVersions
 
-configurations {
-    developmentImplementation {
-        extendsFrom implementation
-    }
-}
 
 dependencies {
+
+    /**
+     * test implementation dependencies
+     */
+
     [
             'com.vaadin:flow-server',
             'com.vaadin:vaadin-icons-flow',
@@ -72,12 +109,73 @@ dependencies {
         developmentImplementation it
     }
 
-    developmentImplementation 'com.vaadin:vaadin-spring-boot-starter'
 
+    /**
+     * test implementation dependencies
+     */
+    [
+            'javax.websocket:javax.websocket-api:1.1',
+            'io.sunshower.aire-test:aire-test-vaadin',
+            'io.sunshower.aire-test:aire-test-spring',
+            'org.springframework.boot:spring-boot-test',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-test',
+    ].each {
+        testImplementation it
+    }
+
+
+    /**
+     * e2e dependencies
+     */
+    [
+            "org.testcontainers:selenium",
+            "org.testcontainers:junit-jupiter",
+            'org.seleniumhq.selenium:selenium-api',
+            'org.seleniumhq.selenium:selenium-java',
+            'org.seleniumhq.selenium:selenium-remote-driver',
+            'org.seleniumhq.selenium:selenium-chrome-driver',
+    ].each {
+        endToEnd it
+    }
+
+
+//    testImplementation "org.testcontainers:selenium"
+//    testImplementation "org.testcontainers:junit-jupiter"
+//    endToEnd "org.testcontainers:selenium"
+//    endToEnd "org.testcontainers:junit-jupiter"
+
+    /**
+     * development dependencies
+     */
+    developmentImplementation 'com.vaadin:vaadin-spring-boot-starter'
 
 }
 
+tasks.register('endToEndTest', Test) {
+
+    useJUnitPlatform()
+    /**
+     *
+     */
+    group = "verification"
+
+
+    description = "Run End-To-End Tests"
+    classpath = sourceSets.e2e.runtimeClasspath
+    testClassesDirs = sourceSets.e2e.output.classesDirs
+
+    shouldRunAfter test
+
+}
+
+check.dependsOn endToEndTest
+
 spotbugsTest {
+    enabled = false
+}
+
+spotbugsE2e {
     enabled = false
 }
 

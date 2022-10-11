@@ -11,7 +11,7 @@
     "target": "es2020",
     "moduleResolution": "node",
     "strict": true,
-    "rootDir": "./src/",
+    "rootDir": ".",
     "outDir": "./dist",
 
     "noFallthroughCasesInSwitch": true,
@@ -22,15 +22,19 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "experimentalDecorators": true,
-    "baseUrl": "src/main/typescript",
+    "useDefineForClassFields": false,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
     "paths": {
-      "aire-ux/*": [
-        "*"
-      ]
-    }
+      "@aire-ux/aire-wizard/*": ["./src/main/typescript/*"]
+
+//      "wizard": ["./src/main/typescript/wizard.ts"]
+    },
+    "types": ["vitest/globals"]
   },
   "include": [
-    "src/main/typescript/**/*.ts",
+    "src/main/typescript/**/*",
+    "src/test/typescript/**/*",
   ],
   "exclude": [
     "./node_modules"

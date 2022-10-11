@@ -1,5 +1,7 @@
-import {css, customElement, html, HTMLTemplateResult, LitElement} from "lit-element";
+import {css, html, HTMLTemplateResult, LitElement} from "lit";
 
+
+import {customElement} from 'lit/decorators/custom-element.js'
 @customElement('aire-wizard-page')
 export class WizardPage extends LitElement {
 
@@ -25,4 +27,10 @@ export class WizardPage extends LitElement {
       </section>
     `;
   }
+  connectedCallback() {
+    console.log("DONE");
+    super.connectedCallback();
+  }
 }
+
+// window.customElements.define('aire-wizard-page', WizardPage);

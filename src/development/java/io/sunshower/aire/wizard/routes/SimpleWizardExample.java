@@ -6,9 +6,7 @@ import com.vaadin.flow.spring.annotation.RouteScope;
 import io.sunshower.aire.components.Wizard;
 import io.sunshower.aire.wizard.routes.simple.Page1;
 import io.sunshower.aire.wizard.routes.simple.Page2;
-import org.springframework.stereotype.Component;
 
-@Component
 @RouteScope
 @Route("wizard/simple")
 public class SimpleWizardExample extends VerticalLayout {

@@ -1,4 +1,14 @@
-import {css, customElement, html, HTMLTemplateResult, LitElement} from "lit-element";
+
+import {
+  css,
+  html,
+  HTMLTemplateResult,
+  LitElement
+} from "lit";
+
+import {
+  customElement
+} from 'lit/decorators/custom-element.js'
 
 @customElement('aire-wizard')
 export class Wizard extends LitElement {
@@ -28,4 +38,5 @@ export class Wizard extends LitElement {
       </article>
     `;
   }
+
 }

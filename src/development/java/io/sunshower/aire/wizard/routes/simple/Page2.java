@@ -10,6 +10,10 @@ import io.sunshower.aire.wizard.routes.simple.Page2.TIconProvider;
 @WizardPage(key = "page-2", title = "world", iconFactory = TIconProvider.class)
 public class Page2 extends AbstractWizardPage<String, Object> {
 
+  public Page2() {
+    getElement().getClassList().add("page-2");
+  }
+
   public static class TIconProvider implements IconFactory {
 
     @Override
