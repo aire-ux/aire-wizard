@@ -175,6 +175,10 @@ spotbugsTest {
     enabled = false
 }
 
+spotbugsE2e {
+    enabled = false
+}
+
 spotbugsMain {
     reports {
         html {
