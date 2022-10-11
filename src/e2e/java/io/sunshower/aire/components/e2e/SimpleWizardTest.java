@@ -18,7 +18,6 @@ import org.testcontainers.junit.jupiter.Container;
 
 // @Testcontainers
 
-@DisabledOnOs(OS.WINDOWS)
 @SpringBootTest(classes = WizardDemoApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class SimpleWizardTest {
 
