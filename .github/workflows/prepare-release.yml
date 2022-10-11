@@ -40,6 +40,8 @@ jobs:
     #################   Overview of Build Process   #################
 
     steps:
+      - name: Setup Docker
+        uses: docker-practice/actions-setup-docker@master
       - name: Checkout
         uses: actions/checkout@master
         with:
