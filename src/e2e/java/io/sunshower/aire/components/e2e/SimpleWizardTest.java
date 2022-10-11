@@ -4,6 +4,8 @@ import io.sunshower.aire.wizard.WizardDemoApplication;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import org.testcontainers.containers.BrowserWebDriverContainer;
 import org.testcontainers.junit.jupiter.Container;
 
 // @Testcontainers
+
+@DisabledOnOs(OS.WINDOWS)
 @SpringBootTest(classes = WizardDemoApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class SimpleWizardTest {
 
