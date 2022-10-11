@@ -36,7 +36,7 @@ configurations {
     }
 
 
-    endToEnd{
+    endToEnd {
         extendsFrom implementation
     }
 }
@@ -77,6 +77,7 @@ sourceSets {
             runtimeClasspath += test.runtimeClasspath
 
             compileClasspath += configurations.endToEnd
+            runtimeClasspath += configurations.endToEnd
 
 
         }
@@ -86,8 +87,6 @@ sourceSets {
 
 compileJava.dependsOn populateVersions
 compileJava.mustRunAfter populateVersions
-
-
 
 
 dependencies {
@@ -119,6 +118,7 @@ dependencies {
             'io.sunshower.aire-test:aire-test-vaadin',
             'io.sunshower.aire-test:aire-test-spring',
             'org.springframework.boot:spring-boot-test',
+            'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-test',
     ].each {
         testImplementation it
@@ -128,8 +128,16 @@ dependencies {
     /**
      * e2e dependencies
      */
-    endToEnd "org.testcontainers:selenium"
-    endToEnd "org.testcontainers:junit-jupiter"
+    [
+            "org.testcontainers:selenium",
+            "org.testcontainers:junit-jupiter",
+            'org.seleniumhq.selenium:selenium-api',
+            'org.seleniumhq.selenium:selenium-java',
+            'org.seleniumhq.selenium:selenium-remote-driver',
+            'org.seleniumhq.selenium:selenium-chrome-driver',
+    ].each {
+        endToEnd it
+    }
 
 
 //    testImplementation "org.testcontainers:selenium"
@@ -146,6 +154,7 @@ dependencies {
 
 tasks.register('endToEndTest', Test) {
 
+    useJUnitPlatform()
     /**
      *
      */
