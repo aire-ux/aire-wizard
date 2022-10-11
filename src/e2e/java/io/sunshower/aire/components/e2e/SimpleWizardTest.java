@@ -16,10 +16,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.testcontainers.containers.BrowserWebDriverContainer;
 import org.testcontainers.junit.jupiter.Container;
 
-
-/**
- * idk--docker on windows in GH actions is not working
- */
+/** idk--docker on windows in GH actions is not working */
 @DisabledOnOs(OS.WINDOWS)
 @SpringBootTest(classes = WizardDemoApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class SimpleWizardTest {

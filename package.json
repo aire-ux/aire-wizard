@@ -70,7 +70,7 @@
     "workbox-precaching": "6.5.0"
   },
   "dependencies": {
-    "@aire-ux/aire-wizard": "1.0.7",
+    "@aire-ux/aire-wizard": "1.0.8",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",
@@ -192,7 +192,7 @@
   },
   "vaadin": {
     "dependencies": {
-      "@aire-ux/aire-wizard": "1.0.7",
+      "@aire-ux/aire-wizard": "1.0.8",
       "@polymer/iron-icon": "3.0.1",
       "@polymer/iron-iconset-svg": "3.0.1",
       "@polymer/iron-list": "3.1.0",
@@ -326,7 +326,7 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "9081a443273a8dcf5b64846b30375b8a2dff4446efd8f89eb66c9c9ccf2cedee"
+    "hash": "94d865d76d5fbcccb1656c66b2794078eade3f3511b3cd670c2ad30b831fa704"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
