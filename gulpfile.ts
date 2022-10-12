@@ -19,7 +19,7 @@ import {
 
 
 const gulpSass = require('gulp-sass'),
-    sass = gulpSass(require('node-sass'));
+    sass = gulpSass(require('sass'));
 
 /**
  * declarations
@@ -39,7 +39,16 @@ const project =
 task('build:typescript', () => {
   return src('./src/main/typescript/**/*.ts')
       .pipe(project())
-      .pipe(dest('./dist/es2019'));
+      .pipe(dest('./dist/es2019'))
+      .pipe(dest('./frontend/ts'));
+});
+
+task('watch:typescript', () => {
+  return watch(
+      './src/main/typescript/**/*.ts',
+      series('build:typescript')
+  );
+
 });
 
 
@@ -50,7 +59,8 @@ task('build:typescript', () => {
 task('build:scss', () => {
   return src('./src/main/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(dest('./styles'));
+      .pipe(dest('./dist/styles'))
+      .pipe(dest('./frontend/dist/styles'));
 });
 
 task('watch:scss', () => {

@@ -80,9 +80,6 @@ sourceSets {
 }
 
 
-compileJava.dependsOn populateVersions
-compileJava.mustRunAfter populateVersions
-
 
 dependencies {
 
