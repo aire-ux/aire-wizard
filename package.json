@@ -70,6 +70,7 @@
     "workbox-precaching": "6.5.0"
   },
   "dependencies": {
+    "@aire-ux/aire-wizard": "1.0.8",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",

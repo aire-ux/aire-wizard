@@ -287,8 +287,18 @@ signing {
     useGpgCmd()
     sign publishing.publications.pluginMaven
 }
+node {
+    download = true
+    version = "18.7.0"
+    npmVersion = "8.15.0"
+    distBaseUrl = "https://nodejs.org/dist"
+}
 
 
+bootJar {
+    mainClass = 'io.sunshower.aire.wizard.WizardDemoApplication'
+    classpath = sourceSets.development.runtimeClasspath
+}
 
 task runDevelopment(type: org.springframework.boot.gradle.tasks.run.BootRun, dependsOn: 'build') {
     group = 'development'
