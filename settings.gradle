@@ -5,13 +5,13 @@ pluginManagement {
         id 'groovy'
         id 'java-library'
         id 'java-test-fixtures'
-        id "com.github.spotbugs" version "5.0.12" apply false
-        id "io.freefair.lombok" version "6.3.0" apply false
-        id "com.diffplug.spotless" version "6.1.0" apply false
-        id 'com.vaadin' version "${vaadinVersion}" apply false
-        id 'org.springframework.boot' version '2.6.2' apply false
-        id "com.github.node-gradle.node" version "3.4.0" apply false
-        id "io.spring.dependency-management" version "1.0.14.RELEASE" apply false
+        id "com.github.spotbugs" version "5.0.12"
+        id "io.freefair.lombok" version "6.3.0"
+        id "com.diffplug.spotless" version "6.1.0"
+        id 'com.vaadin' version "${vaadinVersion}"
+        id 'org.springframework.boot' version '2.7.4'
+        id "com.github.node-gradle.node" version "3.4.0"
+        id "io.spring.dependency-management" version "1.0.14.RELEASE"
     }
 
     repositories {

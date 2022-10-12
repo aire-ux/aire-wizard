@@ -1,11 +1,14 @@
 plugins {
-    id 'java'
     id 'pmd'
+    id 'java'
+    id 'signing'
     id 'com.vaadin'
     id 'maven-publish'
     id 'io.freefair.lombok'
     id 'com.github.spotbugs'
     id 'com.diffplug.spotless'
+    id 'org.springframework.boot'
+    id "com.github.node-gradle.node"
     id 'io.spring.dependency-management'
 }
 
@@ -14,14 +17,6 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'pmd'
-apply plugin: 'signing'
-apply plugin: 'com.vaadin'
-apply plugin: 'java-library'
-apply plugin: 'maven-publish'
-apply plugin: 'io.freefair.lombok'
-apply plugin: 'com.github.spotbugs'
-apply plugin: 'com.diffplug.spotless'
 apply from: "$rootDir/tasks/revisions.gradle"
 dependencyManagement {
     imports {
@@ -291,4 +286,14 @@ publishing {
 signing {
     useGpgCmd()
     sign publishing.publications.pluginMaven
+}
+
+
+
+task runDevelopment(type: org.springframework.boot.gradle.tasks.run.BootRun, dependsOn: 'build') {
+    group = 'development'
+    doFirst {
+        main = 'io.sunshower.aire.wizard.WizardDemoApplication'
+        classpath = sourceSets.development.runtimeClasspath
+    }
 }

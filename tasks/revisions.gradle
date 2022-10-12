@@ -59,3 +59,11 @@ task populateVersions(type: Copy) {
     }
     filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: properties)
 }
+
+
+
+task develop() {
+    dependsOn(
+            'build',
+    )
+}
