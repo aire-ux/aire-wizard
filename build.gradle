@@ -181,6 +181,7 @@ test {
 
 spotless {
     java {
+        targetExclude("build/**/*")
         googleJavaFormat('1.12.0')
     }
 }

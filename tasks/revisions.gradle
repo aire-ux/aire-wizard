@@ -74,6 +74,7 @@ task watch(type: NpmTask) {
 
 
 task develop() {
+    group = 'development'
     dependsOn(
             'nodeSetup',
             'npmInstall',
