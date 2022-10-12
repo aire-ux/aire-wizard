@@ -11,10 +11,9 @@
     "./styles/wizard-page.css": "./dist/styles/wizard-page.css"
   },
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
+    "build": "npx gulp build",
     "test": "npx vitest --config vitest.config.ts run",
-    "develop": "npx vitest --config vitest.config.ts watch",
-    "build": "npx gulp build"
+    "develop": "npx vitest --config vitest.config.ts watch"
   },
   "repository": {
     "type": "git",

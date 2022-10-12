@@ -138,13 +138,6 @@ dependencies {
     ].each {
         endToEnd it
     }
-
-
-//    testImplementation "org.testcontainers:selenium"
-//    testImplementation "org.testcontainers:junit-jupiter"
-//    endToEnd "org.testcontainers:selenium"
-//    endToEnd "org.testcontainers:junit-jupiter"
-
     /**
      * development dependencies
      */

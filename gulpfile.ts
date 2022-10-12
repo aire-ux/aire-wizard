@@ -5,6 +5,8 @@ import {
   src,
   task,
   dest,
+  watch,
+  series,
   parallel
 } from 'gulp';
 
@@ -51,6 +53,9 @@ task('build:scss', () => {
       .pipe(dest('./styles'));
 });
 
+task('watch:scss', () => {
+  return watch('./src/main/scss/**/*.scss', series('build:scss'))
+});
 
 /**
  * build entire project into dist
@@ -60,3 +65,15 @@ task('build',
         'build:typescript',
         'build:scss'
     ));
+
+
+task(
+    'watch',
+    parallel(
+        'watch:scss',
+        'watch:typescript'
+    ));
+
+task('develop',
+    series('build', 'watch')
+);
