@@ -61,25 +61,25 @@ task populateVersions(type: Copy) {
 }
 
 
+
+
+
 task linkSelf(type: NpmTask) {
     group = 'development'
-    args = ['link', '@aire-ux/aire-wizard']
+    args = ['run', 'link']
 }
 
-
-task watch(type: NpmTask) {
+task watch(type: NpmTask, dependsOn: 'linkSelf') {
     group = 'development'
     args = ['run', 'develop']
 }
 
-
 task develop() {
     group = 'development'
     dependsOn(
-            'nodeSetup',
-            'npmInstall',
-            'build',
             'linkSelf',
+            'nodeSetup',
+            'build',
             'watch',
             'runDevelopment'
     )

@@ -293,6 +293,7 @@ node {
     version = "18.7.0"
     npmVersion = "8.15.0"
     distBaseUrl = "https://nodejs.org/dist"
+    nodeProjectDir = file("${project.projectDir}")
 }
 
 
@@ -301,10 +302,19 @@ bootJar {
     classpath = sourceSets.development.runtimeClasspath
 }
 
-task runDevelopment(type: org.springframework.boot.gradle.tasks.run.BootRun, dependsOn: 'build') {
+/**
+ * run the development build
+ */
+
+task runDevelopment(
+        type: org.springframework.boot.gradle.tasks.run.BootRun,
+        dependsOn: [
+                'build',
+                'vaadinPrepareFrontend'
+        ]) {
     group = 'development'
+    main = 'io.sunshower.aire.wizard.WizardDemoApplication'
     doFirst {
-        main = 'io.sunshower.aire.wizard.WizardDemoApplication'
         classpath = sourceSets.development.runtimeClasspath
     }
 }
