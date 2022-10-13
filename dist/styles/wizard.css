@@ -1,48 +1,59 @@
 aire-wizard {
   height: 100%;
   position: relative;
-  display: flex; }
-  aire-wizard ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: .5em 0; }
-    aire-wizard ul > li {
-      position: relative;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      width: inherit;
-      justify-content: center; }
-      aire-wizard ul > li:before, aire-wizard ul > li:after {
-        content: "";
-        height: 2px;
-        position: absolute;
-        width: calc(50% - 1em - 1px);
-        top: 1em;
-        background: linear-gradient(to right, #2385AF 50%, #AAAAAA 50%) right bottom;
-        background-size: 200% 100%;
-        transition: background-position .3s ease-in;
-        animation-direction: normal; }
-      aire-wizard ul > li:before {
-        left: 0; }
-      aire-wizard ul > li:after {
-        right: 0;
-        transition-delay: .3s; }
-      aire-wizard ul > li > .icon, aire-wizard ul > li icon, aire-wizard ul > li vaadin-icon {
-        font-weight: lighter;
-        border: 1px solid #2385AF;
-        color: #2385AF;
-        font-size: 1.5em;
-        padding: .5em;
-        transition: background-color .3s; }
-      aire-wizard ul > li.not-complete:before {
-        transition-delay: .3s; }
-      aire-wizard ul > li.not-complete:after {
-        transition-delay: 0s; }
-      aire-wizard ul > li.complete > .icon, aire-wizard ul > li.complete icon, aire-wizard ul > li.complete vaadin-icon {
-        color: #FFFFFF;
-        background-color: #2385AF; }
-      aire-wizard ul > li.complete:before, aire-wizard ul > li.complete:after {
-        background-position: left bottom; }
+  display: flex;
+}
+aire-wizard ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5em 0;
+}
+aire-wizard ul > li {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  justify-content: center;
+}
+aire-wizard ul > li:before, aire-wizard ul > li:after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: calc(50% - 1em - 1px);
+  top: 1em;
+  background: linear-gradient(to right, #2385AF 50%, #AAAAAA 50%) right bottom;
+  background-size: 200% 100%;
+  transition: background-position 0.3s ease-in;
+  animation-direction: normal;
+}
+aire-wizard ul > li:before {
+  left: 0;
+}
+aire-wizard ul > li:after {
+  right: 0;
+  transition-delay: 0.3s;
+}
+aire-wizard ul > li > .icon, aire-wizard ul > li icon, aire-wizard ul > li vaadin-icon {
+  font-weight: lighter;
+  border: 1px solid #2385AF;
+  color: #2385AF;
+  font-size: 1.5em;
+  padding: 0.5em;
+  transition: background-color 0.3s;
+}
+aire-wizard ul > li.not-complete:before {
+  transition-delay: 0.3s;
+}
+aire-wizard ul > li.not-complete:after {
+  transition-delay: 0s;
+}
+aire-wizard ul > li.complete > .icon, aire-wizard ul > li.complete icon, aire-wizard ul > li.complete vaadin-icon {
+  color: #FFFFFF;
+  background-color: #2385AF;
+}
+aire-wizard ul > li.complete:before, aire-wizard ul > li.complete:after {
+  background-position: left bottom;
+}

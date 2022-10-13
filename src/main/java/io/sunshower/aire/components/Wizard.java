@@ -44,8 +44,10 @@ import lombok.val;
 @Tag("aire-wizard")
 @SuppressWarnings("PMD")
 @SuppressFBWarnings
-@JsModule("@aire-ux/aire-wizard/wizard")
-@CssImport("@aire-ux/aire-wizard/styles/wizard.css")
+// @JsModule("@aire-ux/aire-wizard/wizard")
+// @CssImport("@aire-ux/aire-wizard/dist/styles/wizard.css")
+@JsModule(Paths.WIZARD_SOURCE)
+@CssImport(Paths.WIZARD_STYLES)
 @NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
 public class Wizard<K, V> extends HtmlContainer {
   public static final String COMPLETE = "complete";

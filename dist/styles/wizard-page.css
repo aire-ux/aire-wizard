@@ -1,9 +1,12 @@
 aire-wizard-page {
   overflow-x: hidden;
   display: flex;
-  height: 100%; }
-  aire-wizard-page [slot=content] {
-    flex: 2; }
-  aire-wizard-page [slot=footer], aire-wizard-page footer {
-    display: flex;
-    flex-direction: row; }
+  height: 100%;
+}
+aire-wizard-page [slot=content] {
+  flex: 2;
+}
+aire-wizard-page [slot=footer], aire-wizard-page footer {
+  display: flex;
+  flex-direction: row;
+}

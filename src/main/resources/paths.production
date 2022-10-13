@@ -1,0 +1,4 @@
+wizard=@aire-ux/aire-wizard/wizard
+wizard.css=@aire-ux/aire-wizard/dist/styles/wizard.css
+wizard-page=@aire-ux/aire-wizard/wizard-page
+wizard-page.css=@aire-ux/aire-wizard/dist/styles/wizard-page.css

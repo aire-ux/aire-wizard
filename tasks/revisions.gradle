@@ -59,3 +59,52 @@ task populateVersions(type: Copy) {
     }
     filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: properties)
 }
+
+
+task populatePaths(type: Copy) {
+    from "${project.projectDir}/src/main/resources/templates/Paths.java"
+    into "${buildDir}/generated/sources/main/java/io/sunshower/aire/components"
+
+    def devMode = findProperty('development') != null
+    def properties = new Properties()
+    file("${project.projectDir}/src/main/resources/paths.${devMode ? "development" : "production"}").withInputStream {
+        properties.load(it)
+    }
+    filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: properties)
+}
+
+
+task populate(dependsOn:['populatePaths', 'populateVersions']){
+    group = "development"
+}
+
+compileJava.dependsOn populate
+compileJava.mustRunAfter populate
+
+
+
+
+task linkSelf(type: NpmTask) {
+    group = 'development'
+    args = ['run', 'link']
+}
+
+task watch(type: NpmTask, dependsOn: 'linkSelf') {
+    group = 'development'
+    args = ['run', 'develop']
+}
+
+task buildResources(type: NpmTask) {
+    group = 'development'
+    args = ['run', 'build']
+}
+
+task develop() {
+    group = 'development'
+    dependsOn(
+            'nodeSetup',
+            'buildResources',
+            'build',
+            'runDevelopment'
+    )
+}

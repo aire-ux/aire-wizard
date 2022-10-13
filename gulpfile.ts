@@ -5,6 +5,8 @@ import {
   src,
   task,
   dest,
+  watch,
+  series,
   parallel
 } from 'gulp';
 
@@ -17,7 +19,7 @@ import {
 
 
 const gulpSass = require('gulp-sass'),
-    sass = gulpSass(require('node-sass'));
+    sass = gulpSass(require('sass'));
 
 /**
  * declarations
@@ -37,7 +39,16 @@ const project =
 task('build:typescript', () => {
   return src('./src/main/typescript/**/*.ts')
       .pipe(project())
-      .pipe(dest('./dist/es2019'));
+      .pipe(dest('./dist/es2019'))
+      .pipe(dest('./frontend/ts'));
+});
+
+task('watch:typescript', () => {
+  return watch(
+      './src/main/typescript/**/*.ts',
+      series('build:typescript')
+  );
+
 });
 
 
@@ -48,9 +59,13 @@ task('build:typescript', () => {
 task('build:scss', () => {
   return src('./src/main/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(dest('./styles'));
+      .pipe(dest('./dist/styles'))
+      .pipe(dest('./frontend/dist/styles'));
 });
 
+task('watch:scss', () => {
+  return watch('./src/main/scss/**/*.scss', series('build:scss'))
+});
 
 /**
  * build entire project into dist
@@ -60,3 +75,15 @@ task('build',
         'build:typescript',
         'build:scss'
     ));
+
+
+task(
+    'watch',
+    parallel(
+        'watch:scss',
+        'watch:typescript'
+    ));
+
+task('develop',
+    series('build', 'watch')
+);

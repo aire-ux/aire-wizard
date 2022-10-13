@@ -30,9 +30,11 @@ import lombok.val;
 
 /** base-class for commonly-themed wizard-pages */
 @Tag("aire-wizard-page")
-@CssImport("@aire-ux/aire-wizard/styles/wizard-page.css")
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
-@JsModule("@aire-ux/aire-wizard/wizard-page")
+// @JsModule("@aire-ux/aire-wizard/wizard-page")
+// @CssImport("@aire-ux/aire-wizard/dist/styles/wizard-page.css")
+@JsModule(Paths.WIZARD_PAGE_SOURCE)
+@CssImport(Paths.WIZARD_PAGE_STYLES)
 @NpmPackage(value = "@aire-ux/aire-wizard", version = Versions.AIRE_WIZARD_VERSION)
 @SuppressFBWarnings
 public class AbstractWizardPage<K, T> extends Component
